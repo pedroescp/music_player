@@ -11,10 +11,13 @@
 	--ten: hsla(215, 35%, 25%, 0.9);
 	--eleven: hsla(216, 32%, 23%, 0.9);
 	--dozeKK: hsla(217, 28%, 21%, 0.9);
+	--test: hsla(218, 25%, 15%, 0.9);
 
 	--bg: #EBEBEB;
 	--black: #303030;
     --prog: #A4B7BE;
+
+	--light: #fffca4;
 
 	font-size: 14px;
     font-family: 'Roboto', sans-serif;
@@ -53,7 +56,8 @@ body {
 	height: 200px;
 	border: 4px solid var(--one);
 	box-shadow: 16px 16px 57px var(--seven), -16px -16px 57px var(--dozeKK);
-	animation: rolling-disk 7.5s 0.25s linear infinite;	
+	animation: rolling-disk 10.5s 0.25s linear infinite;	
+	width: 200px;
 }
 
 .disk img{
@@ -74,7 +78,8 @@ body {
     color: var(--prog);
 }
 
-.buttons{
+
+.buttons {
     margin: 2rem 0;
     list-style: none;
     display: flex;
@@ -82,15 +87,27 @@ body {
     align-items: center;
 }
 
-.buttons{
-	color: var(--prog);
+.button {
+    color: var(--light);
     border-radius: 50%;
     margin: 0 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 5px 10px #d4d4d4, 
-                -5px -5px 10px #ffffff;
+    box-shadow: 0px 4px var(--dozeKK), 0px 0px 9px var(--test);
+	transition: 0.3s;
+}
+
+i:active{
+	box-shadow: 0px 2px var(--dozeKK), 0px 0px 3px var(--test);
+	border-bottom: 1px solid var(--test);
+	transform: translateY(3px);
+}
+
+.button:active{
+    box-shadow: 0px 2px var(--dozeKK), 0px 0px 3px var(--test);
+	border-bottom: 1px solid var(--test);
+	transform: translateY(3px);
 }
 
 .button-sm {
@@ -107,8 +124,10 @@ body {
 .button-lg {
     width: 3.25rem;
     height: 3.25rem;
-    box-shadow: inset 6px 6px 12px #c8c8c8, 
-            inset -6px -6px 12px #ffffff
+}
+
+.button:hover{
+	color: #303030;
 }
 
 @media only screen and (max-width: 600px) {
